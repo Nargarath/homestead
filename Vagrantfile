@@ -50,4 +50,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         config.hostmanager.manage_host = true
         config.hostmanager.aliases = settings['sites'].map { |site| site['map'] }
     end
+    config.vm.synced_folder "~/workspace/projects/administradores/site/src/rits/cache", "/home/vagrant/adm/site/src/rits/cache",
+    owner: "vagrant",
+    group: "vagrant",
+    mount_options: ["dmode=777,fmode=777"]
+
+    config.vm.synced_folder "~/workspace/projects/administradores/site/src/rits/data/cache", "/home/vagrant/adm/site/src/rits/data/cache",
+    owner: "vagrant",
+    group: "vagrant",
+    mount_options: ["dmode=777,fmode=777"]
+
+    config.vm.synced_folder "~/workspace/projects/administradores/site/src/rits/application", "/home/vagrant/adm/site/src/rits/application",
+    owner: "vagrant",
+    group: "vagrant",
+    mount_options: ["dmode=777,fmode=777"]
 end
+
+
+ 
