@@ -1,0 +1,97 @@
+---
+ip: "192.168.10.10"
+memory: 4096
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/workspace/utilities
+      to: /home/vagrant/utilities
+    - map: ~/workspace/projects/inversa-store/src
+      to: /home/vagrant/inversa-store
+    - map: ~/workspace/projects/thebeautybox/logic
+      to: /home/vagrant/tbb/logic
+    - map: ~/workspace/projects/thebeautybox/admin
+      to: /home/vagrant/tbb/admin
+    - map: ~/workspace/projects/thebeautybox/store
+      to: /home/vagrant/tbb/store
+    - map: ~/workspace/projects/thebeautybox/webservice
+      to: /home/vagrant/tbb/webservice
+    - map: ~/workspace/projects/nextlevel-site
+      to: /home/vagrant/next/site
+    - map: ~/workspace/projects/seudinheiro
+      to: /home/vagrant/seudinheiro
+    - map: ~/workspace/projects/ebook
+      to: /home/vagrant/ebook
+    - map: ~/workspace/projects/jonas
+      to: /home/vagrant/jonas
+    - map: ~/workspace/projects/administradores
+      to: /home/vagrant/adm
+    - map: ~/workspace/projects/laravel-nova
+      to: /home/vagrant/laravel-nova
+
+sites:
+    - map: inversa-store.rits
+      to: /home/vagrant/inversa-store/public
+      php: "7.2"
+    - map: admin.tbb.rits
+      to: /home/vagrant/tbb/admin/public
+      php: "7.2"
+    - map: store.tbb.rits
+      to: /home/vagrant/tbb/store/public
+      php: "7.2"
+    - map: wbs.tbb.rits
+      to: /home/vagrant/tbb/webservice/public
+      php: "7.2"
+    - map: next.site
+      to: /home/vagrant/next/site/public
+      php: "7.1"
+    - map: seudinheiro.rits
+      to: /home/vagrant/seudinheiro/public
+      php: "7.2"
+    - map: ebook.rits
+      to: /home/vagrant/ebook/public
+      php: "7.2"
+    - map: jonas.rits
+      to: /home/vagrant/jonas/public
+      php: "7.2"
+    - map: adm.site
+      to: /home/vagrant/adm/site/src/public
+      type: "apache"
+      php: "5.6"
+    - map: laravel.nova
+      to: /home/vagrant/laravel-nova/public
+      
+
+databases:
+    - "inversa-store"
+    - "tbb"
+    - "next-site"
+    - "seudinheiro"
+    - "jonas"
+    - "adm-site"
+    - "nova"
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# zray:
+#  If you've already freely registered Z-Ray, you can place the token here.
+#     - email: foo@bar.com
+#       token: foo
+#  Don't forget to ensure that you have 'zray: "true"' for your site.
